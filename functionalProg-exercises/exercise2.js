@@ -114,7 +114,7 @@ const cars =
 ];
 
 
-console.log(ferraris())
+
 function ferraris(){
   const ferrariCars = cars.filter(gettingFerrari)
     function gettingFerrari (car){
@@ -122,12 +122,59 @@ function ferraris(){
             return car
     }
 }
-    return ferrariCars
+  return ferrariCars
 }
-console.log(nineties())
+console.log(ferraris())
+
 function nineties(){
     const ninetiesCars = cars.filter(x => x.model > 1980 && x.model <= 1990 )
     return ninetiesCars
 }
+console.log(nineties())
 
+/* 3-Create a function list that returns an array of strings with the same number of cars.
+Each element should contain the string “This from costs $” (e.g. for the first element it 
+  should say “This Mazda from 1989 costs $5241”).
+*/
 
+function list() {
+  const infoCars = cars.map(deconstructionFunction)
+  function deconstructionFunction(car){
+    let {brand, model, price} = cars;
+    return `This ${brand} from ${model} costs $${price}`
+  }
+}
+console.log(list())
+
+function list(){
+  const listado = cars.map(mapList)
+  function mapList(cars) {
+      let {brand, price,model} = cars
+      return `This ${brand} from ${model} costs $${price}`;
+  }
+  return listado;
+}
+console.log(list())
+
+function bmwSum(){
+  const bmwCars = cars.filter(gettingBmw)
+    function gettingBmw (car){
+        if (car.brand ==="BMW") {
+            return car
+    }
+}
+const listado = bmwCars.map(mapList)
+function mapList(bmwCars) {
+    let { price} = bmwCars
+    return price;
+}
+//console.log("list=",listado)
+const sumPrice= listado.reduce(functionSum)
+function functionSum(x,y) {
+ // console.log("x=",x)
+  //console.log("y=",y)
+    return x + y ;
+}
+    return `The sum of all prices of the BMW cars is $${sumPrice}`
+}
+console.log(bmwSum())

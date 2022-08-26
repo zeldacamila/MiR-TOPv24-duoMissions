@@ -120,3 +120,10 @@ function gettingFerrari (car){
         return car
     }
 }
+console.log(nineties())
+function nineties(){
+    const ninetiesCars = cars.filter(x => x.model > 1980 && x.model <= 1990 )
+    return ninetiesCars
+}
+
+

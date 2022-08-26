@@ -113,12 +113,16 @@ const cars =
     { brand: 'Ferrari', price: 9541, model: 1970 } 
 ];
 
-const ferrariCars = cars.filter(gettingFerrari)
-console.log(ferrariCars)
-function gettingFerrari (car){
-    if (car.brand ==="Ferrari") {
-        return car
+
+console.log(ferraris())
+function ferraris(){
+  const ferrariCars = cars.filter(gettingFerrari)
+    function gettingFerrari (car){
+        if (car.brand ==="Ferrari") {
+            return car
     }
+}
+    return ferrariCars
 }
 console.log(nineties())
 function nineties(){
